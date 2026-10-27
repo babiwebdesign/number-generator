@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Number Generator</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <main class="window">
+    <header class="title-bar">
+      <div class="title">
+        <span class="app-icon">▣</span>
+        <span>random number generator</span>
+      </div>
+
+      <div class="window-buttons" aria-hidden="true">
+        <span>−</span>
+        <span>□</span>
+        <span>×</span>
+      </div>
+    </header>
+
+    <nav class="menu-bar">
+      <button type="button" id="restart">Restart</button>
+    </nav>
+
+    <section class="content">
+      <h1>Random Number Generator</h1>
+      <p class="description">
+        Pick your range and let the magic happen!
+      </p>
+
+      <form id="generator-form">
+        <div class="range-label">
+          <label for="minimum">Minimum number</label>
+          <label for="maximum">Maximum number</label>
+        </div>
+
+        <div class="range-inputs">
+          <input
+            type="number"
+            id="minimum"
+            placeholder="e.g. 1"
+            step="1"
+            required
+          >
+
+          <span class="to-text">to</span>
+
+          <input
+            type="number"
+            id="maximum"
+            placeholder="e.g. 100"
+            step="1"
+            required
+          >
+        </div>
+
+        <p id="error-message" role="alert"></p>
+
+        <button type="submit" class="generate-button">
+          Generate!
+        </button>
+      </form>
+
+      <div class="result-box" aria-live="polite">
+        <p class="result-label">YOUR NUMBER IS</p>
+        <output id="result">?</output>
+      </div>
+
+      <p class="footer-text">✿ a little bit of luck ✿</p>
+    </section>
+  </main>
+
+</body>
+</html>
