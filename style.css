@@ -1,0 +1,283 @@
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+  --pink: #e9a0d0;
+  --light-pink: #f7c3e5;
+  --pale-pink: #fff0fa;
+  --dark-pink: #bd6ba9;
+  --purple: #80547f;
+  --deep-purple: #684268;
+  --white: #fffdfd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 24px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff8fc;
+  color: var(--purple);
+  font-family: 'VT323', monospace;
+  font-size: 22px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.window {
+  width: 100%;
+  max-width: 580px;
+  background: var(--light-pink);
+  border: 5px solid var(--dark-pink);
+  outline: 2px solid #80547f;
+  box-shadow:
+    5px 5px 0 #80547f,
+    9px 9px 0 #d9a5ce;
+}
+
+.title-bar {
+  min-height: 58px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: var(--pink);
+  border-bottom: 4px solid var(--dark-pink);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  font-size: clamp(18px, 4.5vw, 28px);
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+.app-icon {
+  font-size: 25px;
+  flex-shrink: 0;
+}
+
+.window-buttons {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  font-size: 23px;
+}
+
+.window-buttons span {
+  width: 20px;
+  text-align: center;
+}
+
+.menu-bar {
+  padding: 6px 12px;
+  background: #f4b8df;
+  border-bottom: 3px solid var(--dark-pink);
+}
+
+#restart {
+  border: 0;
+  background: transparent;
+  color: var(--purple);
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+#restart:hover {
+  background: var(--purple);
+  color: white;
+}
+
+.content {
+  margin: 12px;
+  padding: clamp(16px, 5vw, 32px);
+  background: var(--white);
+  border: 4px solid #d18abb;
+  outline: 2px solid #80547f;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: clamp(25px, 6vw, 36px);
+  line-height: 1.2;
+  color: var(--deep-purple);
+}
+
+.description {
+  margin: 0 0 28px;
+  line-height: 1.3;
+}
+
+.range-label,
+.range-inputs {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.range-label {
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.range-label label:first-child {
+  grid-column: 1;
+}
+
+.range-label label:last-child {
+  grid-column: 3;
+}
+
+.range-inputs input {
+  width: 100%;
+  min-width: 0;
+  height: 48px;
+  padding: 8px;
+  border: 3px solid #d18abb;
+  border-radius: 0;
+  background: #fff5fb;
+  color: var(--deep-purple);
+  text-align: center;
+  outline: none;
+}
+
+.range-inputs input:focus {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 2px #eed0e8;
+}
+
+.range-inputs input::placeholder {
+  color: #b89ab5;
+}
+
+.to-text {
+  font-size: 20px;
+}
+
+#error-message {
+  min-height: 0;
+  margin: 0;
+  color: #b02b64;
+  font-size: 19px;
+}
+
+#error-message:not(:empty) {
+  margin-top: 12px;
+}
+
+.generate-button {
+  width: 100%;
+  margin-top: 22px;
+  padding: 13px 10px;
+  background: var(--pink);
+  border: 3px solid var(--purple);
+  box-shadow: 4px 4px 0 var(--purple);
+  color: var(--deep-purple);
+  font-size: 25px;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.generate-button:hover {
+  background: #f2b7df;
+}
+
+.generate-button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--purple);
+}
+
+.result-box {
+  margin-top: 30px;
+  padding: 18px 10px;
+  background: var(--pale-pink);
+  border: 3px dashed #d18abb;
+}
+
+.result-label {
+  margin: 0 0 8px;
+  font-size: 19px;
+  letter-spacing: 2px;
+}
+
+#result {
+  display: block;
+  min-height: 55px;
+  font-size: clamp(42px, 10vw, 60px);
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+  color: var(--deep-purple);
+}
+
+.footer-text {
+  margin: 22px 0 0;
+  font-size: 19px;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--deep-purple);
+  outline-offset: 3px;
+}
+
+@media (max-width: 400px) {
+  body {
+    padding: 16px 12px;
+    font-size: 20px;
+  }
+
+  .window {
+    border-width: 4px;
+  }
+
+  .title-bar {
+    padding: 9px 7px;
+  }
+
+  .title {
+    gap: 5px;
+    font-size: 17px;
+  }
+
+  .window-buttons {
+    gap: 2px;
+    font-size: 19px;
+  }
+
+  .window-buttons span {
+    width: 16px;
+  }
+
+  .content {
+    margin: 8px;
+    padding: 18px 12px;
+  }
+
+  .range-label {
+    font-size: 17px;
+  }
+
+  .range-inputs {
+    gap: 6px;
+  }
+
+  .range-inputs input {
+    height: 44px;
+    padding: 5px;
+    font-size: 20px;
+  }
+}
