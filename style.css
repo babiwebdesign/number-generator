@@ -229,6 +229,11 @@ h1 {
   font-size: 19px;
 }
 
+.a {
+  color: var(--deep-purple);
+}
+  
+
 button:focus-visible {
   outline: 3px solid var(--deep-purple);
   outline-offset: 3px;
